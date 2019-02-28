@@ -1,2 +1,2 @@
-# configration-server
-This stat is how to configuration server basic
+# Configurasi Server for My Head
+This all configuration file for config your server
