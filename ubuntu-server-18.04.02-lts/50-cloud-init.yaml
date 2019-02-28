@@ -14,3 +14,4 @@ network:
        addresses: [8.8.8.8,8.8.4.4]
 
 # You must be root for edit this file bro!.
+# Link Source: https://askubuntu.com/questions/1029531/how-to-setup-a-static-ip-on-ubuntu-server-18-04
