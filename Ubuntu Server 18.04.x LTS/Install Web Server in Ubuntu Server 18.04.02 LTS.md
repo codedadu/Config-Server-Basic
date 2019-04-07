@@ -169,7 +169,6 @@ After this operation, 184 MB of additional disk space will be used.
 The version of MariaDB in the Ubuntu official repositories might be outdated. If you want to install a latest MariaDB, 
 add the <a href="https://downloads.mariadb.org/mariadb/repositories/#mirror=Beritagar&distro=Ubuntu&distro_release=bionic--ubuntu_bionic&version=10.3">MariaDB official repository</a> for Ubuntu and install it as shown below.
 
-First, add MariaDB repository and import the key as shown below.
 ```
 Processing triggers for systemd (237-3ubuntu10.17) ...
 Setting up libhtml-parser-perl (3.72-3build1) ...
@@ -183,3 +182,122 @@ Processing triggers for systemd (237-3ubuntu10.17) ...
 Processing triggers for ureadahead (0.100.0-20) ...
 root@server:/home/nara# 
 ```
+First, add MariaDB repository and import the key as shown below.
+
+```
+root@server:/home/nara# apt-get install software-properties-common
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+software-properties-common is already the newest version (0.96.24.32.7).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@server:/home/nara#
+```
+Next
+```
+root@server:/home/nara# apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+Executing: /tmp/apt-key-gpghome.PYbkvRA2aG/gpg.1.sh --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+gpg: key F1656F24C74CD1D8: 6 signatures not checked due to missing keys
+gpg: key F1656F24C74CD1D8: public key "MariaDB Signing Key <signing-key@mariadb.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+root@server:/home/nara# 
+```
+Next
+```
+root@server:/home/nara# add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic main'
+Get:1 http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic InRelease [3,887 B]
+Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:4 http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic/main amd64 Packages [7,992 B]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]                  
+Get:6 http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic/main ppc64el Packages [7,753 B]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]    
+Get:8 http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic/main arm64 Packages [7,762 B]
+Fetched 279 kB in 5s (53.9 kB/s)                           
+Reading package lists... Done
+root@server:/home/nara# 
+```
+After adding the repository, run the following commands to install MariaDB.
+
+```
+root@server:/home/nara# apt -y update
+Hit:1 http://sgp1.mirrors.digitalocean.com/mariadb/repo/10.3/ubuntu bionic InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu bionic-security InRelease
+Reading package lists... Done                      
+Building dependency tree       
+Reading state information... Done
+5 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@server:/home/nara#
+```
+
+Before Update the MySQL Server Version
+
+```
+root@server:/home/nara# mysql --version
+mysql  Ver 15.1 Distrib 10.1.38-MariaDB, for debian-linux-gnu (x86_64) using readline 5.2
+```
+
+Update the MySQL Server
+
+```
+root@server:/home/nara# apt -y install mariadb-server
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libconfig-inifiles-perl libjemalloc1
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  mariadb-client mariadb-client-10.3 mariadb-client-core-10.3 mariadb-common mariadb-server-10.3
+  mariadb-server-core-10.3
+Suggested packages:
+  mailx mariadb-test tinyca
+The following packages will be REMOVED:
+  mariadb-client-10.1 mariadb-client-core-10.1 mariadb-server-10.1 mariadb-server-core-10.1
+The following NEW packages will be installed:
+  mariadb-client-10.3 mariadb-client-core-10.3 mariadb-server-10.3 mariadb-server-core-10.3
+The following packages will be upgraded:
+  mariadb-client mariadb-common mariadb-server
+3 upgraded, 4 newly installed, 4 to remove and 2 not upgraded.
+Preparing to unpack .../mariadb-server_1%3a10.3.14+maria~bionic_all.deb ...
+Unpacking mariadb-server (1:10.3.14+maria~bionic) over (1:10.1.38-0ubuntu0.18.04.1) ...
+(Reading database ... 68251 files and directories currently installed.)
+Removing mariadb-server-10.1 (1:10.1.38-0ubuntu0.18.04.1) ...
+Removing mariadb-client-10.1 (1:10.1.38-0ubuntu0.18.04.1) ...
+
+Progress: [ 21%] [####################.......................................................] 
+```
+
+Verify if MariaDB service is running or not using command:
+
+```
+root@server:/home/nara# /etc/init.d/mysql status
+● mariadb.service - MariaDB 10.3.14 database server
+   Loaded: loaded (/lib/systemd/system/mariadb.service; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/mariadb.service.d
+           └─migrated-from-my.cnf-settings.conf
+   Active: active (running) since Sun 2019-04-07 13:16:54 UTC; 48s ago
+     Docs: man:mysqld(8)
+           https://mariadb.com/kb/en/library/systemd/
+ Main PID: 6494 (mysqld)
+   Status: "Taking your SQL requests now..."
+    Tasks: 31 (limit: 505)
+   CGroup: /system.slice/mariadb.service
+           └─6494 /usr/sbin/mysqld
+
+Apr 07 13:16:53 server mysqld[6494]: 2019-04-07 13:16:53 0 [Note] /usr/sbin/mysqld (mysqld 10.3.14-MariaDB-1:…6494 ...Apr 07 13:16:54 server /etc/mysql/debian-start[6530]: Upgrading MySQL tables if necessary.
+Apr 07 13:16:54 server systemd[1]: Started MariaDB 10.3.14 database server.
+Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignoredApr 07 13:16:54 server /etc/mysql/debian-start[6534]: Looking for 'mysql' as: /usr/bin/mysql
+Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: Version check failed. Got the following error when callin…clientApr 07 13:16:54 server /etc/mysql/debian-start[6534]: ERROR 1524 (HY000): Plugin 'unix_socket' is not loaded
+Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: FATAL ERROR: Upgrade failed
+Apr 07 13:16:54 server /etc/mysql/debian-start[6545]: Checking for insecure root accounts.
+Hint: Some lines were ellipsized, use -l to show in full.
+root@server:/home/nara#
+```
+
+
