@@ -508,7 +508,7 @@ Done.
 
 and here is the display of the image the execution results above
 
-## Bag. 1.4: Install PHP
+## Bag. 4.1: Install PHP
 To install PHP, run:
 ```
 root@server:/home/nara# apt install php libapache2-mod-php php-mysql
@@ -578,3 +578,12 @@ You will be pleased with a screen like below.
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-2.PNG"/>
 
+## Bag. 5.1: Install PHP modules
+To improve the functionality of PHP, you can install some additional PHP modules.
+To list the available PHP modules, run:
+```
+root@server:/home/nara# apt-cache search php- | less
+```
+if you see the display as follows
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-1.PNG"/>
