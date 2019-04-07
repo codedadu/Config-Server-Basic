@@ -401,3 +401,6 @@ in the bellow of pictures access
 and the bellow 
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-mysq-2.PNG"/>
+
+
+if the process is successful as above, it means the process is running correctly
