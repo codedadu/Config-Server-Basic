@@ -162,20 +162,6 @@ Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 The following additional packages will be installed:
-  galera-3 libaio1 libcgi-fast-perl libcgi-pm-perl libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl
-  libencode-locale-perl libfcgi-perl libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl libhttp-date-perl
-  libhttp-message-perl libio-html-perl libjemalloc1 liblwp-mediatypes-perl libmysqlclient20 libterm-readkey-perl
-  libtimedate-perl liburi-perl mariadb-client-10.1 mariadb-client-core-10.1 mariadb-common mariadb-server-10.1
-  mariadb-server-core-10.1 mysql-common socat
-Suggested packages:
-  libclone-perl libmldbm-perl libnet-daemon-perl libsql-statement-perl libdata-dump-perl libipc-sharedcache-perl
-  libwww-perl mailx tinyca
-The following NEW packages will be installed:
-  galera-3 libaio1 libcgi-fast-perl libcgi-pm-perl libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl
-  libencode-locale-perl libfcgi-perl libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl libhttp-date-perl
-  libhttp-message-perl libio-html-perl libjemalloc1 liblwp-mediatypes-perl libmysqlclient20 libterm-readkey-perl
-  libtimedate-perl liburi-perl mariadb-client mariadb-client-10.1 mariadb-client-core-10.1 mariadb-common
-  mariadb-server mariadb-server-10.1 mariadb-server-core-10.1 mysql-common socat
 0 upgraded, 30 newly installed, 0 to remove and 0 not upgraded.
 Need to get 24.2 MB of archives.
 After this operation, 184 MB of additional disk space will be used.
