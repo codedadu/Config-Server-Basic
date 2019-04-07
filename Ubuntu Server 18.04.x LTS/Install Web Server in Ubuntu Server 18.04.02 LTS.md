@@ -289,14 +289,6 @@ root@server:/home/nara# /etc/init.d/mysql status
    CGroup: /system.slice/mariadb.service
            └─6494 /usr/sbin/mysqld
 
-Apr 07 13:16:53 server mysqld[6494]: 2019-04-07 13:16:53 0 [Note] /usr/sbin/mysqld (mysqld 10.3.14-MariaDB-1:…6494 ...Apr 07 13:16:54 server /etc/mysql/debian-start[6530]: Upgrading MySQL tables if necessary.
-Apr 07 13:16:54 server systemd[1]: Started MariaDB 10.3.14 database server.
-Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignoredApr 07 13:16:54 server /etc/mysql/debian-start[6534]: Looking for 'mysql' as: /usr/bin/mysql
-Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
-Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: Version check failed. Got the following error when callin…clientApr 07 13:16:54 server /etc/mysql/debian-start[6534]: ERROR 1524 (HY000): Plugin 'unix_socket' is not loaded
-Apr 07 13:16:54 server /etc/mysql/debian-start[6534]: FATAL ERROR: Upgrade failed
-Apr 07 13:16:54 server /etc/mysql/debian-start[6545]: Checking for insecure root accounts.
-Hint: Some lines were ellipsized, use -l to show in full.
 root@server:/home/nara#
 ```
 
