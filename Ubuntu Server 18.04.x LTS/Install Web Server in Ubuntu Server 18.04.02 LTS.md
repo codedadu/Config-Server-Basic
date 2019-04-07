@@ -562,3 +562,4 @@ phpinfo();
 
 and the following is shown in the picture
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-1.PNG"/>
