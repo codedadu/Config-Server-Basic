@@ -42,6 +42,7 @@ root@server:/home/nara#
 ```
 
 ## Bag. 1.2: See the Status of Apache2
+For Check the Status of Apache2 Web Server, you can execute command in the bellow:
 
 ```
 root@server:/home/nara# /etc/init.d/apache2 status
