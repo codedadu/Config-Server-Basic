@@ -100,3 +100,18 @@ enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 and open in your Web Browser Client with IP Address VM
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/webserver.PNG"/>
+
+## Bag. 2.1: Adjust firewall to allow Apache web server
+By default, the apache web browser can’t be accessed from remote systems if you have enabled the UFW firewall in Ubuntu 18.04 LTS. 
+You must allow the http and https traffic via UFW by following the below steps.
+
+First, let us view which applications have installed a profile using command:
+```
+root@server:/home/nara# ufw app list
+Available applications:
+  Apache
+  Apache Full
+  Apache Secure
+  OpenSSH
+root@server:/home/nara# 
+```
