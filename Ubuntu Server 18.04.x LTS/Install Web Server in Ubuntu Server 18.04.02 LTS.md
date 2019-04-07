@@ -1,4 +1,4 @@
-# Install Apache, MariaDB, PHP (LAMP stack) in Ubuntu 18.04 LTS Server
+﻿# Install Apache, MariaDB, PHP (LAMP stack) in Ubuntu 18.04 LTS Server
 For the purpose of this tutorial, I will be using the following testbox.
 
 - Operating System : Ubuntu 18.04.02 64 bit LTS server
@@ -97,3 +97,4 @@ enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 and open in your Web Browser Client with IP Address VM
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/webserver.PNG"/>
