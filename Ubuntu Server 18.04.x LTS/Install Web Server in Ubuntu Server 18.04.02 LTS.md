@@ -150,3 +150,5 @@ root@server:/home/nara#
 ```
 Now, open up your web browser and navigate to http://localhost/ or http://IP-Address/.
 If you are see a screen something like above, you are good to go. Apache server is working!
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/webserver-after-ufw.PNG"/>
