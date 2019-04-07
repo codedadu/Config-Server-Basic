@@ -301,3 +301,103 @@ root@server:/home/nara#
 ```
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/mysql-pass-3.PNG"/>
+
+## 3.2: Setup database administrative user (root) password
+During MariaDB installation, It will set password for the administrative user account (root).
+If you try to setup password manually using command:
+```
+root@server:/home/nara# mysql_secure_installation
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we'll need the current
+password for the root user.  If you've just installed MariaDB, and
+you haven't set the root password yet, the password will be blank,
+so you should just press enter here.
+
+Enter current password for root (enter for none): 
+ERROR 1524 (HY000): Plugin 'unix_socket' is not loaded
+Enter current password for root (enter for none): 
+ERROR 1524 (HY000): Plugin 'unix_socket' is not loaded
+Enter current password for root (enter for none): 
+```
+
+after that open the new of tab in ssh remote
+
+```
+nara@server:~$ sudo su
+[sudo] password for nara: 
+root@server:/home/nara# /etc/init.d/mysql stop
+[ ok ] Stopping mysql (via systemctl): mysql.service.
+root@server:/home/nara# mysqld_safe --skip-grant-tables &
+[1] 6854
+root@server:/home/nara# 190407 13:31:25 mysqld_safe Logging to syslog.
+190407 13:31:25 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+```
+
+and access MySQL in another tab with command in bellow
+
+```
+root@server:/home/nara# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.3.14-MariaDB-1:10.3.14+maria~bionic mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> 
+```
+
+and quering the bellow 
+
+```
+MariaDB [(none)]> use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [mysql]> update user set password=PASSWORD("21091994") where User='root';
+Query OK, 0 rows affected (0.001 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+MariaDB [mysql]> update user set plugin="mysql_native_password";
+Query OK, 2 rows affected (0.001 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+MariaDB [mysql]> quit;
+Bye
+root@server:/home/nara# 
+```
+
+and process is success in the bellow
+
+```
+root@server:/home/nara# /etc/init.d/mysql stop
+[ ok ] Stopping mysql (via systemctl): mysql.service.
+root@server:/home/nara# kill -9 $(pgrep mysql)
+root@server:/home/nara# /etc/init.d/mysql start
+[ ok ] Starting mysql (via systemctl): mysql.service.
+[1]+  Killed                  mysqld_safe --skip-grant-tables
+root@server:/home/nara# mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.3.14-MariaDB-1:10.3.14+maria~bionic mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> 
+```
+
+in the bellow of pictures access 
+
+<img src=""/>
+
+and the bellow 
+
+<img src=""/>
