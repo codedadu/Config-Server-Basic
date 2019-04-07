@@ -272,6 +272,14 @@ Removing mariadb-client-10.1 (1:10.1.38-0ubuntu0.18.04.1) ...
 Progress: [ 21%] [####################.......................................................] 
 ```
 
+Put the Password for MySQL
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/mysql-pass-1.PNG"/>
+
+Next Verify the Password for MySQL 
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/mysql-pass-2.PNG"/>
+
 Verify if MariaDB service is running or not using command:
 
 ```
@@ -292,4 +300,4 @@ root@server:/home/nara# /etc/init.d/mysql status
 root@server:/home/nara#
 ```
 
-
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/mysql-pass-3.PNG"/>
