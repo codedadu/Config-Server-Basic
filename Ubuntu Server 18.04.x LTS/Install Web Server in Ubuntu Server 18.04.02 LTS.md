@@ -563,3 +563,18 @@ phpinfo();
 and the following is shown in the picture
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-1.PNG"/>
+
+Save and quit the file. Restart apache service to take effect the changes.
+
+```
+root@server:/home/nara# /etc/init.d/apache2 restart
+[ ok ] Restarting apache2 (via systemctl): apache2.service.
+root@server:/home/nara# 
+```
+
+Now, open up your web browser and type: http://IP-address/info.php in the address bar.
+
+You will be pleased with a screen like below.
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-2.PNG"/>
+
