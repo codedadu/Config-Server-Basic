@@ -115,3 +115,38 @@ Available applications:
   OpenSSH
 root@server:/home/nara# 
 ```
+As you can see, Apache and OpenSSH applications have installed UFW profiles.
+
+If you look into the “Apache Full” profile, you will see that it enables traffic to the ports 80 and 443:
+```
+root@server:/home/nara# ufw app info "Apache Full"
+Profile: Apache Full
+Title: Web Server (HTTP,HTTPS)
+Description: Apache v2 is the next generation of the omnipresent Apache web
+server.
+
+Ports:
+  80,443/tcp
+root@server:/home/nara# 
+```
+Now, run the following command to allow incoming HTTP and HTTPS traffic for this profile:
+```
+root@server:/home/nara# ufw allow in "Apache Full"
+Rules updated
+Rules updated (v6)
+root@server:/home/nara# 
+```
+If you don’t want to allow https traffic, but only http (80) traffic, run this command instead:
+```
+root@server:/home/nara# ufw app info "Apache"
+Profile: Apache
+Title: Web Server
+Description: Apache v2 is the next generation of the omnipresent Apache web
+server.
+
+Port:
+  80/tcp
+root@server:/home/nara# 
+```
+Now, open up your web browser and navigate to http://localhost/ or http://IP-Address/.
+If you are see a screen something like above, you are good to go. Apache server is working!
