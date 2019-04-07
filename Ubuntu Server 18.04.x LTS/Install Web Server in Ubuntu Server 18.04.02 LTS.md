@@ -504,3 +504,6 @@ root@server:/home/nara#
 
 Done.
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-mysq-2.PNG"/>
+
+and here is the display of the image the execution results above
