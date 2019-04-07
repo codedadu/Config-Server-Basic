@@ -402,5 +402,6 @@ and the bellow
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-mysq-2.PNG"/>
 
-
 if the process is successful as above, it means the process is running correctly
+
+Link Source Solve the Problem in Here: <a href="https://askubuntu.com/questions/705458/ubuntu-15-10-mysql-error-1524-unix-socket"/>https://askubuntu.com/questions/705458/ubuntu-15-10-mysql-error-1524-unix-socket</a>
