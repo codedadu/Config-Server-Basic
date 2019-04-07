@@ -152,3 +152,49 @@ Now, open up your web browser and navigate to http://localhost/ or http://IP-Add
 If you are see a screen something like above, you are good to go. Apache server is working!
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/webserver-after-ufw.PNG"/>
+
+## 3.1: Install MariaDB
+MariaDB is the drop-in replacement of MySQL database server.
+To install it, run:
+```
+root@server:/home/nara# apt -y install mariadb-server mariadb-client
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  galera-3 libaio1 libcgi-fast-perl libcgi-pm-perl libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl
+  libencode-locale-perl libfcgi-perl libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl libhttp-date-perl
+  libhttp-message-perl libio-html-perl libjemalloc1 liblwp-mediatypes-perl libmysqlclient20 libterm-readkey-perl
+  libtimedate-perl liburi-perl mariadb-client-10.1 mariadb-client-core-10.1 mariadb-common mariadb-server-10.1
+  mariadb-server-core-10.1 mysql-common socat
+Suggested packages:
+  libclone-perl libmldbm-perl libnet-daemon-perl libsql-statement-perl libdata-dump-perl libipc-sharedcache-perl
+  libwww-perl mailx tinyca
+The following NEW packages will be installed:
+  galera-3 libaio1 libcgi-fast-perl libcgi-pm-perl libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl
+  libencode-locale-perl libfcgi-perl libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl libhttp-date-perl
+  libhttp-message-perl libio-html-perl libjemalloc1 liblwp-mediatypes-perl libmysqlclient20 libterm-readkey-perl
+  libtimedate-perl liburi-perl mariadb-client mariadb-client-10.1 mariadb-client-core-10.1 mariadb-common
+  mariadb-server mariadb-server-10.1 mariadb-server-core-10.1 mysql-common socat
+0 upgraded, 30 newly installed, 0 to remove and 0 not upgraded.
+Need to get 24.2 MB of archives.
+After this operation, 184 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 mysql-common all 5.8+1.0.4 [7,308 B]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 mariadb-common all 1:10.1.38-0ubuntu0.18.04.1 [15.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/universe amd64 galera-3 amd64 25.3.20-1 [947 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libdbi-perl amd64 1.640-1 [724 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libaio1 amd64 0.3.110-5 [6,448 B]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 mariadb-client-core-10.1 amd64 1:10.1.38-0ubuntu0.18.04.1 [4,763 kB]
+```
+The version of MariaDB in the Ubuntu official repositories might be outdated. If you want to install a latest MariaDB, 
+add the <a href="https://downloads.mariadb.org/mariadb/repositories/#mirror=Beritagar&distro=Ubuntu&distro_release=bionic--ubuntu_bionic&version=10.3">MariaDB official repository</a> for Ubuntu and install it as shown below.
+
+First, add MariaDB repository and import the key as shown below.
+```
+Processing triggers for systemd (237-3ubuntu10.17) ...
+Setting up libhtml-parser-perl (3.72-3build1) ...
+Setting up libcgi-pm-perl (4.38-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+
+Progress: [ 80%] [############################################################################....................] 
+```
