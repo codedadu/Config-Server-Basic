@@ -507,3 +507,58 @@ Done.
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-mysq-2.PNG"/>
 
 and here is the display of the image the execution results above
+
+## Bag. 1.4: Install PHP
+To install PHP, run:
+```
+root@server:/home/nara# apt install php libapache2-mod-php php-mysql
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libconfig-inifiles-perl libjemalloc1
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libapache2-mod-php7.2 libsodium23 php-common php7.2 php7.2-cli php7.2-common php7.2-json php7.2-mysql
+  php7.2-opcache php7.2-readline
+Suggested packages:
+  php-pear
+The following NEW packages will be installed:
+  libapache2-mod-php libapache2-mod-php7.2 libsodium23 php php-common php-mysql php7.2 php7.2-cli php7.2-common
+  php7.2-json php7.2-mysql php7.2-opcache php7.2-readline
+0 upgraded, 13 newly installed, 0 to remove and 2 not upgraded.
+Need to get 4,126 kB of archives.
+After this operation, 18.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+```
+
+```
+Creating config file /etc/php/7.2/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/exif.ini with new version
+
+Progress: [ 67%] [##########################################.................................]
+```
+
+After installing PHP, create info.php file in the Apache root document folder. Usually, the apache root 
+document folder will be /var/www/html/ or /var/www/ in most Debian based Linux distributions. 
+In Ubuntu 18.04 LTS, it is /var/www/html/.
+
+Create info.php in the apache root folder as shown below.
+
+```
+root@server:/home/nara# nano /var/www/html/info.php
+```
+
+Add the following lines:
+
+```
+<?php
+phpinfo();
+?>
+```
+
+and the following is shown in the picture
+
