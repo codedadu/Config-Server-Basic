@@ -179,12 +179,6 @@ The following NEW packages will be installed:
 0 upgraded, 30 newly installed, 0 to remove and 0 not upgraded.
 Need to get 24.2 MB of archives.
 After this operation, 184 MB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 mysql-common all 5.8+1.0.4 [7,308 B]
-Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 mariadb-common all 1:10.1.38-0ubuntu0.18.04.1 [15.6 kB]
-Get:3 http://archive.ubuntu.com/ubuntu bionic/universe amd64 galera-3 amd64 25.3.20-1 [947 kB]
-Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libdbi-perl amd64 1.640-1 [724 kB]
-Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libaio1 amd64 0.3.110-5 [6,448 B]
-Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 mariadb-client-core-10.1 amd64 1:10.1.38-0ubuntu0.18.04.1 [4,763 kB]
 ```
 The version of MariaDB in the Ubuntu official repositories might be outdated. If you want to install a latest MariaDB, 
 add the <a href="https://downloads.mariadb.org/mariadb/repositories/#mirror=Beritagar&distro=Ubuntu&distro_release=bionic--ubuntu_bionic&version=10.3">MariaDB official repository</a> for Ubuntu and install it as shown below.
@@ -196,5 +190,11 @@ Setting up libhtml-parser-perl (3.72-3build1) ...
 Setting up libcgi-pm-perl (4.38-1) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 
-Progress: [ 80%] [############################################################################....................] 
+Progress: [ 80%] [#########################################################################....................] 
+Created symlink /etc/systemd/system/multi-user.target.wants/mariadb.service → /lib/systemd/system/mariadb.service.
+Setting up mariadb-server (1:10.1.38-0ubuntu0.18.04.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.17) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+root@server:/home/nara# 
 ```
