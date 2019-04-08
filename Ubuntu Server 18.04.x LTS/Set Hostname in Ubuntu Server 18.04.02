@@ -82,6 +82,8 @@ root@server:/home/nara# nano /etc/cloud/cloud.cfg
 
 Next, Search for preserve_hostname and change the value from false to true:
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/barfore-setup-cloud.PNG"/>
+
 ```
 
 # The top level settings are used as module
@@ -100,6 +102,8 @@ disable_root: true
 # This will cause the set+update hostname module to not operate (if true)
 preserve_hostname: true
 ```
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/after-setup-cloud.PNG"/>
 
 Save the file and close your editor.
 
@@ -121,3 +125,5 @@ root@server:/home/nara#
 ```
 
 Done. & Reboot now the VM
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/reboot.PNG"/>
