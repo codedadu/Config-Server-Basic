@@ -80,3 +80,5 @@ dan akan tersisa error seperti dibawah ini, klik pada bagian biru seperti dibawa
 dan berikut adalah tampilan dari hasil resolve diatas, Done.
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-15.PNG"/>
+
+Sumber Resolve: <a href="https://github.com/septiyadii/Issue-Configuration/issues/4">https://github.com/septiyadii/Issue-Configuration/issues/4</a>
