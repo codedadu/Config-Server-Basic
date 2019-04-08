@@ -127,3 +127,5 @@ root@server:/home/nara#
 Done. & Reboot now the VM
 
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/reboot.PNG"/>
+
+Sumber: <a href="https://linuxize.com/post/how-to-change-hostname-on-ubuntu-18-04/">https://linuxize.com/post/how-to-change-hostname-on-ubuntu-18-04/"/>
