@@ -683,3 +683,5 @@ root@server:/home/nara#
 <img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-3.PNG"/>
 
 Done.
+
+Sumber: <a href="https://stackoverflow.com/questions/34170434/how-install-apcu-as-php7-extension-on-debian">https://stackoverflow.com/questions/34170434/how-install-apcu-as-php7-extension-on-debian</a>
