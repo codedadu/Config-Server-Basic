@@ -29,6 +29,25 @@ Need to get 19.7 MB of archives.
 
 Jika ditengah-tengah installasi terjadi error pada saat konfig seperti gambar dibawah ini
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-1.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-2.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-3.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-4.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-5.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-6.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-7.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-8.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-9.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-10.PNG"/>
 
 ketik command berikut untuk meresolve masalah diatas
 
@@ -39,6 +58,9 @@ root@server:/home/nara# nano /etc/phpmyadmin/config.inc.php
 cari pada baris bagian ini dan rubah seperti tampak pada gambar dibawah ini
 
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-11.PNG"/>
+
+
 simpan kemudian restart apache2 dan reload phpmyadminnya
 
 ```
@@ -47,6 +69,14 @@ root@server:/home/nara# /etc/init.d/apache2 restart
 root@server:/home/nara# 
 ```
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-12.PNG"/>
+
 dan akan tersisa error seperti dibawah ini, klik pada bagian biru seperti dibawah untuk meresolvenya
 
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-13.PNG"/>
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-14.PNG"/>
+
 dan berikut adalah tampilan dari hasil resolve diatas, Done.
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/phpmyadmin-15.PNG"/>
