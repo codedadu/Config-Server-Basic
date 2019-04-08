@@ -586,4 +586,100 @@ root@server:/home/nara# apt-cache search php- | less
 ```
 if you see the display as follows
 
-<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-1.PNG"/>
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/php-module-1.PNG"/>
+
+press the q button on the keyboard to exit the list, Use and arrows to move up and down between the result. To exit from the result, type q.
+To find the details of any particular php module, for example php-gd, run:
+
+```
+root@server:/home/nara# apt-cache show php-gd
+Package: php-gd
+Architecture: all
+Version: 1:7.2+60ubuntu1
+Priority: optional
+Section: php
+Source: php-defaults (60ubuntu1)
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 12
+Depends: php-common, php7.2-gd
+Filename: pool/main/p/php-defaults/php-gd_7.2+60ubuntu1_all.deb
+Size: 1996
+MD5sum: ae0e312dec5db146aab1cbfb14a8ef2a
+SHA1: aa421e29135aff63d8d1329ec85eefb2fa498891
+SHA256: ff13272662f8ff2f0a8cfd49cf4804998a3e78aaaa0e227df5221aa231449e93
+Description-en: GD module for PHP [default]
+ This package provides a GD module for PHP.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
+ .
+ This package is a dependency package, which depends on Ubuntu's default
+ PHP version (currently 7.2).
+Description-md5: 6438a3c7ff1c62cd576d5b3171465bef
+Supported: 5y
+```
+
+To install a php module run:
+
+```
+root@server:/home/nara# apt install php-gd
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libconfig-inifiles-perl libjemalloc1
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libtiff5 libwebp6
+  libxpm4 php7.2-gd
+Suggested packages:
+  libgd-tools
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libtiff5 libwebp6
+  libxpm4 php-gd php7.2-gd
+0 upgraded, 12 newly installed, 0 to remove and 2 not upgraded.
+Need to get 1,892 kB of archives.
+After this operation, 6,237 kB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+```
+
+To install all modules (not necessary though), run:
+
+```
+root@server:/home/nara# apt-get install php7.2-apcu
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'php-apcu' instead of 'php7.2-apcu'
+The following additional packages will be installed:
+  php-apcu-bc
+The following NEW packages will be installed:
+  php-apcu php-apcu-bc
+0 upgraded, 2 newly installed, 0 to remove and 2 not upgraded.
+Need to get 56.4 kB of archives.
+After this operation, 246 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu bionic/universe amd64 php-apcu amd64 5.1.9+4.0.11-1build1 [48.1 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic/universe amd64 php-apcu-bc amd64 1.0.3-2ubuntu2 [8,368 B]
+Fetched 56.4 kB in 3s (20.0 kB/s) 
+Selecting previously unselected package php-apcu.
+(Reading database ... 68547 files and directories currently installed.)
+Preparing to unpack .../php-apcu_5.1.9+4.0.11-1build1_amd64.deb ...
+Unpacking php-apcu (5.1.9+4.0.11-1build1) ...
+Selecting previously unselected package php-apcu-bc.
+Preparing to unpack .../php-apcu-bc_1.0.3-2ubuntu2_amd64.deb ...
+Unpacking php-apcu-bc (1.0.3-2ubuntu2) ...
+Setting up php-apcu (5.1.9+4.0.11-1build1) ...
+Setting up php-apcu-bc (1.0.3-2ubuntu2) ...
+root@server:/home/nara# /etc/init.d/apache2 restart
+[ ok ] Restarting apache2 (via systemctl): apache2.service.
+root@server:/home/nara# 
+```
+
+<img src="https://github.com/codedadu/Linux-Bash-Config/blob/master/Ubuntu%20Server%2018.04.x%20LTS/captures/config-php-3.PNG"/>
+
+Done.
